@@ -403,29 +403,17 @@ h3 {
   box-shadow: 0 30px 86px rgba(0, 184, 200, 0.34);
 }
 
-.icon-circle{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:260px;
-    height:56px;
-    margin:0 auto 24px;
-    border-radius:50px;
-    background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--cyan),
-        var(--green)
-    );
-
-    color:#fff;
-    font-size:1rem;
-    font-weight:700;
-    text-align:center;
-    box-shadow:
-        0 12px 28px rgba(0,170,255,.28);
-
+.icon-circle {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan), var(--green));
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 0 26px rgba(0, 184, 200, 0.34);
 }
 
 .service-card p,
