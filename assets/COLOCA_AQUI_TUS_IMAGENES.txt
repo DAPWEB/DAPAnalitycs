@@ -1,0 +1,16 @@
+Sube aquí tus imágenes con estos nombres exactos:
+
+Fondos:
+- Fondo_DAP_1.png
+- Fondo_DAP_2.png
+- Fondo_DAP_3.png
+- Fondo_Desarrollo_4.png
+- Fondo_Desarrollo_5.png
+
+Logos:
+- Logo_DAP_1.png
+- Logo_MBO_1.png
+- Logo_EHSMART_1.png
+- Logo_ROCS_1.png
+
+Si tus archivos son .jpg o .webp, cambia la extensión en style.css o index.html.
