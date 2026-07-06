@@ -701,18 +701,23 @@ footer strong {
 .service-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 390px;
 }
 
 .service-img {
   width: 100%;
-  max-width: 260px;
-  height: 90px;
+  max-width: 420px;
+  height: 135px;
   object-fit: contain;
-  margin: 24px auto 0;
-  opacity: 0.96;
+  margin: 28px auto 0;
+  opacity: 0.98;
+  flex-shrink: 0;
+
   filter:
-    drop-shadow(0 0 14px rgba(0, 170, 255, 0.26))
-    drop-shadow(0 0 20px rgba(66, 201, 40, 0.18));
+    drop-shadow(0 0 16px rgba(0, 170, 255, 0.30))
+    drop-shadow(0 0 24px rgba(66, 201, 40, 0.22));
+
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
