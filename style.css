@@ -708,11 +708,11 @@ footer strong {
 
 
 
-.service-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 390px;
+.service-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    min-height:480px;
 }
 
 .service-img{
