@@ -4,17 +4,27 @@
    ============================== */
 
 :root {
-  --bg: #08111f;
-  --bg-soft: #102039;
-  --card: rgba(255, 255, 255, 0.16);
-  --card-strong: rgba(255, 255, 255, 0.22);
+  --bg: #061421;
+  --bg-soft: #0b2236;
+
+  --blue: #009fe8;
+  --blue-light: #20c4ff;
+  --cyan: #00b8c8;
+  --green: #42c928;
+  --green-soft: #20e2a3;
+
+  --primary: #00aaff;
+  --primary-2: #20e2a3;
+  --accent: #42c928;
+
   --text: #f7fbff;
-  --muted: #d4deec;
-  --primary: #17b7ff;
-  --primary-2: #7c5cff;
-  --accent: #22e6a8;
-  --border: rgba(255, 255, 255, 0.26);
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.30);
+  --muted: #d6e7f2;
+
+  --card: rgba(5, 24, 39, 0.62);
+  --card-strong: rgba(7, 35, 56, 0.78);
+  --border: rgba(32, 196, 255, 0.28);
+
+  --shadow: 0 26px 80px rgba(0, 170, 255, 0.18);
 }
 
 * {
@@ -28,11 +38,11 @@ html {
 }
 
 body {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #1a3760 0%, var(--bg) 45%, #050914 100%);
+  background:
+    radial-gradient(circle at top left, rgba(0,159,232,.28), transparent 34%),
+    radial-gradient(circle at top right, rgba(66,201,40,.20), transparent 32%),
+    linear-gradient(135deg, #061421 0%, #081b2c 48%, #041018 100%);
   color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
 }
 
 a {
