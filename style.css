@@ -94,6 +94,11 @@ img {
   width: 118px;
   max-height: 56px;
   object-fit: contain;
+
+  background: rgba(4, 18, 28, 0.94);
+  padding: 6px 10px;
+  border-radius: 14px;
+
   filter: drop-shadow(0 0 18px rgba(0, 184, 200, 0.45));
 }
 
