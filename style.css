@@ -691,24 +691,17 @@ footer strong {
 }
 
 .metric-icon{
-
-    width:82px;
-    height:82px;
-
+    width:42px;
+    height:42px;
     object-fit:contain;
     flex-shrink:0;
-
     opacity:.95;
-
     transition:.30s;
 }
 
 .metric:hover .metric-icon{
-
     transform:scale(1.08);
-
     filter:
         drop-shadow(0 0 16px rgba(0,170,255,.35))
         drop-shadow(0 0 24px rgba(66,201,40,.25));
-
 }
