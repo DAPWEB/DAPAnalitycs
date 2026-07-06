@@ -691,8 +691,8 @@ footer strong {
 }
 
 .metric-icon{
-    width:62px;
-    height:62px;
+    width:72px;
+    height:72px;
     object-fit:contain;
     flex-shrink:0;
     opacity:.95;
