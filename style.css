@@ -20,11 +20,11 @@
   --text: #f7fbff;
   --muted: #d6e7f2;
 
-  --card: rgba(5, 24, 39, 0.62);
-  --card-strong: rgba(7, 35, 56, 0.78);
-  --border: rgba(32, 196, 255, 0.28);
+  --card: rgba(5, 24, 39, 0.66);
+  --card-strong: rgba(7, 35, 56, 0.82);
+  --border: rgba(32, 196, 255, 0.30);
 
-  --shadow: 0 26px 80px rgba(0, 170, 255, 0.18);
+  --shadow: 0 26px 80px rgba(0, 170, 255, 0.20);
 }
 
 * {
@@ -38,11 +38,14 @@ html {
 }
 
 body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(0,159,232,.28), transparent 34%),
-    radial-gradient(circle at top right, rgba(66,201,40,.20), transparent 32%),
+    radial-gradient(circle at top left, rgba(0,159,232,.30), transparent 34%),
+    radial-gradient(circle at top right, rgba(66,201,40,.22), transparent 32%),
     linear-gradient(135deg, #061421 0%, #081b2c 48%, #041018 100%);
   color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -55,6 +58,10 @@ img {
   display: block;
 }
 
+/* ==============================
+   NAVBAR
+   ============================== */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -64,33 +71,35 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 14px 7%;
-  background: rgba(8, 17, 31, 0.58);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid transparent;
+  background: rgba(4, 18, 28, 0.72);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(32, 196, 255, 0.18);
   transition: 0.3s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(8, 17, 31, 0.88);
-  border-bottom-color: var(--border);
+  background: rgba(4, 18, 28, 0.94);
+  border-bottom-color: rgba(66, 201, 40, 0.28);
+  box-shadow: 0 12px 40px rgba(0, 170, 255, 0.14);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .brand-logo {
-  width: 68px;
-  max-height: 48px;
+  width: 118px;
+  max-height: 56px;
   object-fit: contain;
-  filter: drop-shadow(0 8px 18px rgba(23, 183, 255, 0.22));
+  filter: drop-shadow(0 0 18px rgba(0, 184, 200, 0.45));
 }
 
 .brand-text {
-  color: var(--muted);
+  color: #d8f8ff;
   font-size: 0.85rem;
+  letter-spacing: 0.02em;
 }
 
 .nav-links {
@@ -98,19 +107,24 @@ img {
   align-items: center;
   gap: 26px;
   font-size: 0.92rem;
-  color: var(--muted);
+  color: #c7eaf1;
+}
+
+.nav-links a {
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: var(--text);
+  color: var(--green);
 }
 
 .nav-cta {
   padding: 10px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(23, 183, 255, 0.55);
-  color: var(--text) !important;
-  background: rgba(23, 183, 255, 0.18);
+  border: 1px solid rgba(66, 201, 40, 0.60);
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(0, 170, 255, 0.30), rgba(32, 226, 163, 0.24));
+  box-shadow: 0 0 24px rgba(0, 184, 200, 0.22);
 }
 
 .menu-toggle {
@@ -130,6 +144,10 @@ img {
   border-radius: 2px;
 }
 
+/* ==============================
+   FONDOS DE SECCIONES
+   ============================== */
+
 .section-bg {
   position: relative;
   isolation: isolate;
@@ -143,8 +161,9 @@ img {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(8, 17, 31, 0.78), rgba(8, 17, 31, 0.45), rgba(8, 17, 31, 0.24)),
-    radial-gradient(circle at 25% 35%, rgba(23, 183, 255, 0.24), transparent 38%);
+    linear-gradient(90deg, rgba(4,18,28,.72), rgba(4,18,28,.46), rgba(4,18,28,.24)),
+    radial-gradient(circle at 20% 30%, rgba(0,170,255,.22), transparent 36%),
+    radial-gradient(circle at 78% 35%, rgba(66,201,40,.18), transparent 38%);
 }
 
 .section-bg::after {
@@ -152,14 +171,19 @@ img {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
 }
 
+/* Deja aquí tus nombres de imagen como ya los modificaste */
 #inicio { background-image: url("assets/Fondo_DAP_0.png"); }
 #quienes { background-image: url("assets/Fondo_DAP_2.png"); }
 #servicios { background-image: url("assets/Fondo_DAP_3.png"); }
 #desarrollos { background-image: url("assets/Fondo_DAP_1.png"); }
 #ia { background-image: url("assets/Fondo_DAP_4.png"); }
+
+/* ==============================
+   HERO
+   ============================== */
 
 .hero {
   min-height: 100vh;
@@ -185,6 +209,7 @@ img {
   letter-spacing: 0.18em;
   font-weight: 800;
   margin-bottom: 14px;
+  text-shadow: 0 0 20px rgba(66, 201, 40, 0.42);
 }
 
 h1 {
@@ -192,14 +217,14 @@ h1 {
   line-height: 0.95;
   letter-spacing: -0.07em;
   max-width: 900px;
-  text-shadow: 0 14px 42px rgba(0,0,0,0.45);
+  text-shadow: 0 18px 48px rgba(0,0,0,0.52);
 }
 
 h2 {
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1;
   letter-spacing: -0.05em;
-  text-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  text-shadow: 0 14px 42px rgba(0,0,0,0.45);
 }
 
 h3 {
@@ -222,6 +247,10 @@ h3 {
   margin-top: 32px;
 }
 
+/* ==============================
+   BOTONES
+   ============================== */
+
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -231,23 +260,30 @@ h3 {
   border-radius: 999px;
   font-weight: 800;
   border: 1px solid var(--border);
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(0, 184, 200, 0.28);
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  background: linear-gradient(135deg, var(--blue), var(--cyan), var(--green));
   color: #fff;
   border: 0;
+  box-shadow: 0 14px 36px rgba(0, 170, 255, 0.28);
 }
 
 .btn.secondary {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--text);
+  border: 1px solid rgba(32, 196, 255, 0.34);
 }
+
+/* ==============================
+   TARJETAS
+   ============================== */
 
 .hero-panel {
   display: grid;
@@ -258,13 +294,15 @@ h3 {
   padding: 26px;
   border: 1px solid var(--border);
   border-radius: 28px;
-  background: rgba(13, 27, 48, 0.62);
-  backdrop-filter: blur(16px);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)),
+    rgba(5, 24, 39, 0.68);
+  backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
 }
 
 .metric span {
-  color: var(--primary);
+  color: var(--blue-light);
   font-weight: 900;
   font-size: 0.85rem;
 }
@@ -312,14 +350,16 @@ h3 {
 .suite-card,
 .contact-card {
   border: 1px solid var(--border);
-  background: var(--card);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)),
+    var(--card);
   border-radius: 32px;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
 }
 
 .glass {
   padding: 34px;
-  backdrop-filter: blur(16px);
 }
 
 .glass p + p {
@@ -337,9 +377,9 @@ h3 {
 .tags span {
   padding: 9px 13px;
   border-radius: 999px;
-  background: rgba(23, 183, 255, 0.18);
-  color: #e4f8ff;
-  border: 1px solid rgba(23, 183, 255, 0.28);
+  background: rgba(0, 184, 200, 0.16);
+  color: #e9feff;
+  border: 1px solid rgba(66, 201, 40, 0.30);
   font-size: 0.9rem;
 }
 
@@ -357,13 +397,14 @@ h3 {
   padding: 32px;
   min-height: 270px;
   transition: 0.25s ease;
-  backdrop-filter: blur(16px);
 }
 
 .service-card:hover,
-.suite-card:hover {
+.suite-card:hover,
+.ia-list div:hover {
   transform: translateY(-5px);
-  border-color: rgba(23, 183, 255, 0.55);
+  border-color: rgba(66, 201, 40, 0.58);
+  box-shadow: 0 30px 86px rgba(0, 184, 200, 0.34);
 }
 
 .icon-circle {
@@ -373,9 +414,10 @@ h3 {
   place-items: center;
   margin-bottom: 22px;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(23, 183, 255, 0.45), rgba(34, 230, 168, 0.28));
+  background: linear-gradient(135deg, var(--blue), var(--cyan), var(--green));
   color: #fff;
   font-weight: 900;
+  box-shadow: 0 0 26px rgba(0, 184, 200, 0.34);
 }
 
 .service-card p,
@@ -392,16 +434,19 @@ h3 {
 
 .suite-card {
   overflow: hidden;
-  background: rgba(13, 27, 48, 0.68);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04)),
+    rgba(5, 24, 39, 0.72);
   transition: 0.25s ease;
-  backdrop-filter: blur(16px);
 }
 
 .suite-card img {
   height: 230px;
   object-fit: contain;
   padding: 26px;
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at center, rgba(32,196,255,0.16), transparent 48%),
+    rgba(255, 255, 255, 0.08);
 }
 
 .suite-content {
@@ -423,6 +468,10 @@ h3 {
   margin-top: 8px;
 }
 
+/* ==============================
+   IA ANALYTICS
+   ============================== */
+
 .ia-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -439,16 +488,25 @@ h3 {
   padding: 26px;
   border: 1px solid var(--border);
   border-radius: 24px;
-  background: var(--card-strong);
-  backdrop-filter: blur(16px);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05)),
+    var(--card-strong);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
 }
+
+/* ==============================
+   CONTACTO
+   ============================== */
 
 .contact {
   display: grid;
   place-items: center;
   background:
-    radial-gradient(circle at top left, rgba(23,183,255,0.24), transparent 34%),
-    linear-gradient(135deg, #0f213b, #07101f);
+    radial-gradient(circle at top left, rgba(0,170,255,0.28), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(66,201,40,0.20), transparent 34%),
+    linear-gradient(135deg, #061421, #082235);
 }
 
 .contact-card {
@@ -456,9 +514,9 @@ h3 {
   padding: clamp(34px, 6vw, 72px);
   text-align: center;
   background:
-    radial-gradient(circle at top left, rgba(23,183,255,0.26), transparent 34%),
-    rgba(255,255,255,0.14);
-  backdrop-filter: blur(16px);
+    radial-gradient(circle at top left, rgba(0,170,255,0.26), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(66,201,40,0.16), transparent 34%),
+    rgba(255,255,255,0.12);
 }
 
 .contact-info {
@@ -473,14 +531,20 @@ h3 {
   font-size: 1.1rem;
 }
 
+/* ==============================
+   FOOTER
+   ============================== */
+
 footer {
   padding: 30px 7%;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(32, 196, 255, 0.24);
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 22px;
   color: var(--muted);
-  background: rgba(5, 9, 20, 0.95);
+  background:
+    radial-gradient(circle at top left, rgba(0,170,255,0.14), transparent 28%),
+    linear-gradient(135deg, #04121c, #061b29);
 }
 
 footer div {
@@ -497,7 +561,10 @@ footer strong {
   line-height: 1.55;
 }
 
-/* Animaciones */
+/* ==============================
+   ANIMACIONES
+   ============================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -509,7 +576,10 @@ footer strong {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
 @media (max-width: 980px) {
   .hero,
   .two-column,
@@ -537,7 +607,7 @@ footer strong {
   }
 
   .brand-logo {
-    width: 56px;
+    width: 86px;
   }
 
   .brand-text {
@@ -560,7 +630,7 @@ footer strong {
     padding: 14px;
     border: 1px solid var(--border);
     border-radius: 24px;
-    background: rgba(8, 17, 31, 0.96);
+    background: rgba(4, 18, 28, 0.96);
   }
 
   .nav-links.open {
@@ -590,7 +660,9 @@ footer strong {
   }
 
   .section-overlay {
-    background: linear-gradient(180deg, rgba(8, 17, 31, 0.74), rgba(8, 17, 31, 0.50));
+    background:
+      linear-gradient(180deg, rgba(4,18,28,.78), rgba(4,18,28,.52)),
+      radial-gradient(circle at 50% 15%, rgba(0,170,255,.18), transparent 42%);
   }
 
   footer {
