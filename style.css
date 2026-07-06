@@ -83,24 +83,14 @@ img {
   box-shadow: 0 12px 40px rgba(0, 170, 255, 0.14);
 }
 
-.brand {
-  background: rgba(4, 18, 28, 0.94);
-  padding: 6px 12px;
-  border-radius: 16px;
-  border: 1px solid rgba(32, 196, 255, 0.18);
-}
+.brand { display: flex; 
+        align-items: center; 
+        gap: 12px; } 
 
-.brand-logo {
-  width: 118px;
-  max-height: 56px;
-  object-fit: contain;
-
-  background: rgba(4, 18, 28, 0.94);
-  padding: 6px 10px;
-  border-radius: 14px;
-
-  filter: drop-shadow(0 0 18px rgba(0, 184, 200, 0.45));
-}
+.brand-logo { width: 68px; 
+             max-height: 48px; 
+             object-fit: contain; 
+             filter: drop-shadow(0 8px 18px rgba(23, 183, 255, 0.22)); }
 
 .brand-text {
   color: #d8f8ff;
