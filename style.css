@@ -695,3 +695,31 @@ footer strong {
         drop-shadow(0 0 16px rgba(0,170,255,.35))
         drop-shadow(0 0 24px rgba(66,201,40,.25));
 }
+
+
+
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-img {
+  width: 100%;
+  max-width: 260px;
+  height: 90px;
+  object-fit: contain;
+  margin: 24px auto 0;
+  opacity: 0.96;
+  filter:
+    drop-shadow(0 0 14px rgba(0, 170, 255, 0.26))
+    drop-shadow(0 0 20px rgba(66, 201, 40, 0.18));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.04);
+  filter:
+    drop-shadow(0 0 18px rgba(0, 170, 255, 0.38))
+    drop-shadow(0 0 28px rgba(66, 201, 40, 0.26));
+}
