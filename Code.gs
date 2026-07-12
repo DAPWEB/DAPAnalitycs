@@ -8,7 +8,7 @@
 const DAP_CONTACT_DB_ID = "199v8njv6c-oQepGwWt6Grf8hnaGxbm4L25mL20kO7Ig";
 const DAP_CONTACT_SHEET = "BD_CONTACTO_WEB";
 
-const DAP_NOTIFICATION_EMAIL = "contacto@dapanalytics.com";
+const DAP_NOTIFICATION_EMAIL = "ing.uriel.portilla@dapanalytics.com";
 const DAP_SENDER_ALIAS = "contacto@dapanalytics.com";
 const DAP_SENDER_NAME = "DAP | Digitalización y Automatización de Procesos";
 
