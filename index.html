@@ -244,26 +244,149 @@
        <p>Identifica comportamientos futuros con base en registros históricos.</p> 
      </div> <div> <strong>Dashboards inteligentes</strong> <p>Visualiza indicadores, riesgos, avances, proyectos y desviaciones.</p> 
      </div> <div> <strong>Consulta documental</strong> <p>Convierte archivos, bases de datos y evidencias en información consultable.</p> </div> </div> </div> </section>
-
     <section class="section contact" id="contacto">
-      <div class="contact-card reveal">
-        <p class="eyebrow">Contacto</p>
-        <h2>Hagamos crecer su operación.</h2>
-        <p>¿Desea digitalizar un proceso? ¿Necesita una plataforma personalizada? ¿Quiere implementar Inteligencia Artificial en su organización?</p>
+      <div class="contact-container">
+        <div class="contact-intro reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2>Hagamos crecer su operación.</h2>
+          <p>
+            Cuéntenos qué proceso desea digitalizar, automatizar o analizar.
+            El equipo de DAP revisará su solicitud y se pondrá en contacto con usted.
+          </p>
 
-        <div class="contact-actions">
-          <a class="btn primary" href="mailto:ing.uriel.portilla@gmail.com?subject=Información%20sobre%20DAP">Enviar correo</a>
-          <a class="btn secondary" href="tel:+525555000052">Llamar</a>
+          <div class="contact-data">
+            <div>
+              <span>Correo</span>
+              <a href="mailto:contacto@dapanalytics.com">contacto@dapanalytics.com</a>
+            </div>
+            <div>
+              <span>Teléfono</span>
+              <a href="tel:+525555000052">+52 55 5500 0052</a>
+            </div>
+            <div>
+              <span>Atención</span>
+              <strong>Soluciones empresariales DAP</strong>
+            </div>
+          </div>
         </div>
 
-        <div class="contact-info">
-          <strong>M. en C. Luis Uriel Hernández Portilla</strong>
-          <span>Digitalización, automatización e Inteligencia Artificial</span>
-          <span>+52 5555000052</span>
-          <span>ing.uriel.portilla@gmail.com</span>
+        <div class="contact-form-card reveal">
+          <form id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nombre">Nombre completo <span>*</span></label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  maxlength="120"
+                  autocomplete="name"
+                  required
+                />
+                <small class="field-error"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="empresa">Empresa <span>*</span></label>
+                <input
+                  type="text"
+                  id="empresa"
+                  name="empresa"
+                  maxlength="150"
+                  autocomplete="organization"
+                  required
+                />
+                <small class="field-error"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="correo">Correo electrónico <span>*</span></label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  maxlength="150"
+                  autocomplete="email"
+                  required
+                />
+                <small class="field-error"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  maxlength="30"
+                  autocomplete="tel"
+                />
+                <small class="field-error"></small>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label for="servicio">Servicio de interés <span>*</span></label>
+                <select id="servicio" name="servicio" required>
+                  <option value="">Selecciona un servicio</option>
+                  <option value="DAP Suites">DAP Suites</option>
+                  <option value="DAP Desarrollo">DAP Desarrollo</option>
+                  <option value="DAP IA Analytics">DAP IA Analytics</option>
+                </select>
+                <small class="field-error"></small>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label for="mensaje">¿Cómo podemos ayudarle?</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="5"
+                  maxlength="2000"
+                  placeholder="Describa brevemente el proceso, necesidad o proyecto."
+                ></textarea>
+                <small class="field-error"></small>
+              </div>
+            </div>
+
+            <div class="form-consent">
+              <input type="checkbox" id="privacidad" name="privacidad" required />
+              <label for="privacidad">
+                He leído y acepto el aviso de privacidad para el tratamiento de mis datos. <span>*</span>
+              </label>
+            </div>
+
+            <!-- Campo señuelo contra bots. Debe permanecer vacío y oculto. -->
+            <div class="website-field" aria-hidden="true">
+              <label for="website">Sitio web</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="submit" class="btn primary submit-contact" id="submitContact">
+              <span class="submit-label">Enviar solicitud</span>
+              <span class="submit-spinner" aria-hidden="true"></span>
+            </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
+
+    <div class="dap-modal" id="contactSuccessModal" aria-hidden="true">
+      <div class="dap-modal-backdrop" data-close-modal></div>
+      <div class="dap-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+        <button class="dap-modal-close" type="button" aria-label="Cerrar" data-close-modal>&times;</button>
+        <img src="assets/Logo_DAP_Letras_azulverde.png" alt="DAP" class="dap-modal-logo" />
+        <div class="dap-modal-check">✓</div>
+        <h3 id="contactModalTitle">¡Gracias por su interés!</h3>
+        <p>
+          Su solicitud fue registrada correctamente. El equipo de DAP revisará la información
+          y se comunicará con usted a la brevedad.
+        </p>
+        <p class="dap-modal-folio" id="contactFolio"></p>
+        <button type="button" class="btn primary" data-close-modal>Aceptar</button>
+      </div>
+    </div>
   </main>
 
   <footer>
