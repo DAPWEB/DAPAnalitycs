@@ -137,7 +137,43 @@ function dap_saveContactFromApp(payload) {
 }
 
 function normalizePayload_(e) {
-  const p = (e && e.parameter) || {};
+  let p = {};
+
+  /*
+   * Recibe application/x-www-form-urlencoded
+   * o multipart/form-data.
+   */
+  if (e && e.parameter && Object.keys(e.parameter).length) {
+    p = e.parameter;
+  }
+
+  /*
+   * Recibe application/json.
+   */
+  if (
+    e &&
+    e.postData &&
+    e.postData.contents
+  ) {
+    const contenido =
+      String(e.postData.contents || "").trim();
+
+    const tipoContenido =
+      String(e.postData.type || "").toLowerCase();
+
+    if (
+      tipoContenido.includes("application/json") ||
+      contenido.startsWith("{")
+    ) {
+      try {
+        p = JSON.parse(contenido);
+      } catch (errorJson) {
+        throw new Error(
+          "El formulario envió un JSON inválido."
+        );
+      }
+    }
+  }
 
   return {
     nombre: sanitize_(p.nombre, 120),
