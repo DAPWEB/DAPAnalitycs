@@ -1,45 +1,63 @@
-# DAP Website
+# Integración de contacto DAP
 
-Sitio web estático para GitHub Pages.
+## Archivos para GitHub Pages
 
-## Archivos
+- `index.html`: sustituye al HTML actual.
+- `style.css`: sustituye al CSS actual.
+- `script.js`: sustituye al JavaScript actual.
 
-- `index.html`: estructura principal.
-- `style.css`: diseño visual y responsive.
-- `script.js`: menú móvil, navbar y animaciones.
-- `README.md`: instrucciones.
+En `script.js`, reemplaza:
 
-## Cómo publicarlo en GitHub Pages
+```js
+const DAP_CONTACT_API_URL = "COLOCA_AQUI_LA_URL_EXEC_DE_TU_WEBAPP";
+```
 
-1. Crear un repositorio en GitHub, por ejemplo: `dap-web`.
-2. Subir estos archivos directamente en la raíz del repositorio.
-3. Entrar a `Settings > Pages`.
-4. En `Build and deployment`, seleccionar:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-5. Guardar.
-6. GitHub generará una liga como:
-   `https://TU-USUARIO.github.io/dap-web/`
+por la URL terminada en `/exec` que Apps Script entregue al implementar la WebApp.
 
-## Dominio personalizado
+## Archivos para Google Apps Script
 
-En `Settings > Pages > Custom domain` coloca tu dominio, por ejemplo:
+- `Code.gs`
+- `Index.html`
 
-`www.tudominio.com`
+### Base de datos
 
-Luego configura el DNS del dominio con un registro CNAME:
+Archivo:
 
-- Tipo: CNAME
-- Nombre: www
-- Valor: TU-USUARIO.github.io
+`199v8njv6c-oQepGwWt6Grf8hnaGxbm4L25mL20kO7Ig`
 
-## Personalización rápida
+Hoja:
 
-Busca en `index.html` estos datos para cambiarlos:
+`BD_CONTACTO_WEB`
 
-- Nombre de contacto
-- Teléfono
-- Correo
-- Textos de servicios
-- Links de imágenes
+Encabezados A:I:
+
+`ID | REGISTRO | NOMBRE | EMPRESA | CORREO | TELÉFONO | SERVICIO | MENSAJE | ESTATUS`
+
+## Implementación
+
+1. Crea un proyecto de Apps Script desde la cuenta que administrará DAP.
+2. Pega `Code.gs`.
+3. Crea un archivo HTML llamado exactamente `Index` y pega `Index.html`.
+4. En Configuración del proyecto, usa zona horaria `America/Mexico_City`.
+5. Ejecuta manualmente `dap_authorizeAndCheckAliases`.
+6. Acepta los permisos.
+7. Revisa el registro de ejecución y confirma que:
+   - `contacto@dapanalytics.com` aparece dentro de `aliases`.
+8. Implementa como aplicación web:
+   - Ejecutar como: **Yo**
+   - Quién tiene acceso: **Cualquier usuario**
+9. Copia la URL `/exec` en `script.js`.
+10. Sube los tres archivos de GitHub y prueba desde una ventana incógnita.
+
+## Remitente contacto@dapanalytics.com
+
+Para que Apps Script pueda usar:
+
+```js
+from: "contacto@dapanalytics.com"
+```
+
+esa dirección debe aparecer como alias autorizado en la cuenta que ejecuta el proyecto.
+
+La firma visual no se toma automáticamente de Gmail. El diseño corporativo ya está construido dentro del `htmlBody` del correo.
+
