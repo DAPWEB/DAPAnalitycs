@@ -210,3 +210,140 @@ contactForm?.addEventListener("submit", async (event) => {
   }
 });
 
+
+
+
+
+
+/* ======================================================
+   CARRUSEL DE EMPRESAS - SECCIÓN QUIÉNES SOMOS
+====================================================== */
+
+function initBusinessCarousel() {
+  const carousel = document.querySelector(".business-carousel");
+
+  if (!carousel) return;
+
+  const viewport = carousel.querySelector(".business-carousel-viewport");
+  const track = carousel.querySelector(".business-carousel-track");
+  const slides = Array.from(
+    carousel.querySelectorAll(".business-carousel-slide")
+  );
+
+  const previousButton = carousel.querySelector(
+    ".business-carousel-prev"
+  );
+
+  const nextButton = carousel.querySelector(
+    ".business-carousel-next"
+  );
+
+  const dotsContainer = document.querySelector(
+    ".business-carousel-dots"
+  );
+
+  if (
+    !viewport ||
+    !track ||
+    !previousButton ||
+    !nextButton ||
+    !dotsContainer ||
+    slides.length === 0
+  ) {
+    return;
+  }
+
+  let currentIndex = 0;
+  let startPositionX = 0;
+  let endPositionX = 0;
+
+  const dots = slides.map((slide, index) => {
+    const dot = document.createElement("button");
+
+    dot.type = "button";
+    dot.className = "business-carousel-dot";
+    dot.setAttribute(
+      "aria-label",
+      `Mostrar imagen empresarial ${index + 1}`
+    );
+
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateCarousel();
+    });
+
+    dotsContainer.appendChild(dot);
+
+    return dot;
+  });
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentIndex);
+      dot.setAttribute(
+        "aria-current",
+        index === currentIndex ? "true" : "false"
+      );
+    });
+  }
+
+  function showNextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function showPreviousSlide() {
+    currentIndex =
+      (currentIndex - 1 + slides.length) % slides.length;
+
+    updateCarousel();
+  }
+
+  nextButton.addEventListener("click", showNextSlide);
+  previousButton.addEventListener("click", showPreviousSlide);
+
+  viewport.addEventListener(
+    "touchstart",
+    (event) => {
+      startPositionX = event.touches[0].clientX;
+    },
+    { passive: true }
+  );
+
+  viewport.addEventListener(
+    "touchend",
+    (event) => {
+      endPositionX = event.changedTouches[0].clientX;
+
+      const movement = startPositionX - endPositionX;
+      const minimumMovement = 45;
+
+      if (movement > minimumMovement) {
+        showNextSlide();
+      }
+
+      if (movement < -minimumMovement) {
+        showPreviousSlide();
+      }
+    },
+    { passive: true }
+  );
+
+  carousel.setAttribute("tabindex", "0");
+
+  carousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      showNextSlide();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showPreviousSlide();
+    }
+  });
+
+  updateCarousel();
+}
+
+document.addEventListener("DOMContentLoaded", initBusinessCarousel);
