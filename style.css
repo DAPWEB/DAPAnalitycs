@@ -1060,3 +1060,153 @@ body.modal-open {
     border-radius: 24px;
   }
 }
+
+
+
+/* ======================================================
+   CARRUSEL DE EMPRESAS - SECCIÓN QUIÉNES SOMOS
+====================================================== */
+
+.business-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.business-card h3 {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.business-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.business-carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  touch-action: pan-y;
+}
+
+.business-carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.business-carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+}
+
+.business-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 20px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.business-carousel-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: rgba(8, 20, 38, 0.72);
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.business-carousel-btn:hover {
+  background: rgba(18, 141, 255, 0.92);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.business-carousel-prev {
+  left: 12px;
+}
+
+.business-carousel-next {
+  right: 12px;
+}
+
+.business-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -8px;
+}
+
+.business-carousel-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.business-carousel-dot.active {
+  width: 26px;
+  border-radius: 10px;
+  background: #128dff;
+}
+
+@media (max-width: 900px) {
+  .business-carousel-slide img {
+    height: 330px;
+  }
+}
+
+@media (max-width: 600px) {
+  .business-card {
+    gap: 18px;
+  }
+
+  .business-carousel-slide img {
+    height: 260px;
+  }
+
+  .business-carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .business-carousel-prev {
+    left: 8px;
+  }
+
+  .business-carousel-next {
+    right: 8px;
+  }
+}
