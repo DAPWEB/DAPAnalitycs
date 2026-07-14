@@ -1071,7 +1071,7 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  min-width: 0;
+  width: 100%;
 }
 
 .business-card h3 {
