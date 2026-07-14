@@ -337,7 +337,7 @@ h3 {
 
 .two-column {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 0.9fr 1.0fr;
   gap: 24px;
 }
 
@@ -1107,14 +1107,12 @@ body.modal-open {
   min-width: 100%;
 }
 
-.business-carousel-slide img {
-  display: block;
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  border-radius: 20px;
-  user-select: none;
-  pointer-events: none;
+.business-carousel-slide img{
+    width:100%;
+    height:560px;
+    object-fit:contain;
+    border-radius:20px;
+    background:rgba(255,255,255,.02);
 }
 
 .business-carousel-btn {
