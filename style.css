@@ -1110,7 +1110,7 @@ body.modal-open {
 .business-carousel-slide img {
   display: block;
   width: 100%;
-  height: 390px;
+  height: 520px;
   object-fit: cover;
   border-radius: 20px;
   user-select: none;
