@@ -170,12 +170,19 @@ img {
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* Deja aquí tus nombres de imagen como ya los modificaste */
-#inicio { background-image: url("assets/PORTADA_CV_LUHP_2026_1.png"); }
-#quienes { background-image: url("assets/Fondo_DAP_2.png"); }
-#servicios { background-image: url("assets/Fondo_DAP_3.png"); }
-#desarrollos { background-image: url("assets/Fondo_DAP_1.png"); }
-#ia { background-image: url("assets/Fondo_DAP_4.png"); }
+#inicio,
+#quienes,
+#servicios,
+#desarrollos {
+  background-image: url("assets/PORTADA_CV_LUHP_2026_1.png");
+}
+
+/* IA Analytics conserva su fondo actual */
+#ia {
+  background-image: url("assets/Fondo_DAP_4.png");
+}
+
+
 
 /* ==============================
    HERO
@@ -513,6 +520,16 @@ h3 {
     radial-gradient(circle at top left, rgba(0,170,255,0.28), transparent 34%),
     radial-gradient(circle at bottom right, rgba(66,201,40,0.20), transparent 34%),
     linear-gradient(135deg, #061421, #082235);
+}
+
+
+#contacto {
+  background-image:
+    linear-gradient(rgba(4, 18, 28, 0.72), rgba(4, 18, 28, 0.78)),
+    url("assets/PORTADA_CV_LUHP_2026_1.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .contact-card {
@@ -1546,7 +1563,6 @@ body.modal-open {
 
 
 
-
 /* Quiénes somos */
 #quienes {
   min-height: auto;
@@ -1560,25 +1576,33 @@ body.modal-open {
 }
 
 .quienes-content h2 {
-  color: var(--green);
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.045em;
   margin-bottom: 26px;
+  color: var(--green);
+  font-size: clamp(2.25rem, 4vw, 3.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
 }
 
 .quienes-content p {
-  max-width: 650px;
+  max-width: 680px;
   color: var(--text);
-  font-size: clamp(1.08rem, 1.55vw, 1.3rem);
-  line-height: 1.8;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.75;
 }
 
-.quienes-image img {
-  display: block;
+.quienes-image {
+  min-width: 0;
+}
+
+.quienes-image .business-carousel-slide img {
   width: 100%;
-  height: auto;
-  border-radius: 24px;
+  height: clamp(300px, 37vw, 500px);
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.quienes-image .business-carousel-dots {
+  margin-top: 14px;
 }
 
 @media (max-width: 900px) {
@@ -1588,8 +1612,18 @@ body.modal-open {
   }
 
   .quienes-image {
-    max-width: 680px;
     width: 100%;
+    max-width: 680px;
     margin: 0 auto;
+  }
+
+  .quienes-image .business-carousel-slide img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .quienes-image .business-carousel-slide img {
+    height: 270px;
   }
 }
