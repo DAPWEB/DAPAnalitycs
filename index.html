@@ -6,7 +6,14 @@
   <title>DAP | Digitalización, Automatización e Inteligencia Artificial</title>
   <meta name="description" content="DAP desarrolla soluciones digitales, suites empresariales, plataformas a la medida e Inteligencia Artificial para automatizar y analizar procesos empresariales." />
   <link rel="icon" type="image/png" sizes="40x32" href="assets/Logo_DAP_Letras_azulverde.png">
-  <link rel="stylesheet" href="style.css" />
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+  crossorigin="anonymous"
+/>
+
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -191,61 +198,333 @@
       </div>
     </section>
 
-    <section class="section section-bg" id="desarrollos">
-      <div class="section-overlay"></div>
-      <div class="section-inner">
-        <div class="section-heading center reveal">
-          <p class="eyebrow">Desarrollos</p>
-          <h2>Suites DAP listas para evolucionar tu operación.</h2>
+   <section class="section section-bg" id="desarrollos">
+  <div class="section-overlay"></div>
+
+  <div class="section-inner">
+    <div class="section-heading center reveal">
+      <p class="eyebrow">Desarrollos</p>
+      <h2>Elige la solución que necesita tu operación.</h2>
+    </div>
+
+    <div class="dev-grid">
+      <article class="dev-card reveal">
+        <span class="dev-card-label">Aplicaciones</span>
+        <h3>Apps Prepago</h3>
+
+        <p>
+          Activa la aplicación que necesites por 1, 6 o 12 meses,
+          o utiliza la versión gratuita durante 5 días.
+        </p>
+
+        <button
+          type="button"
+          class="btn primary dev-card-button"
+          data-bs-toggle="modal"
+          data-bs-target="#devAppsModal"
+        >
+          Conocer Apps
+        </button>
+      </article>
+
+      <article class="dev-card reveal">
+        <span class="dev-card-label">Soluciones empresariales</span>
+        <h3>Suites y Plataformas</h3>
+
+        <p>
+          Soluciones para gestionar y automatizar tu empresa
+          mediante una suscripción anual.
+        </p>
+
+        <button
+          type="button"
+          class="btn primary dev-card-button"
+          data-bs-toggle="modal"
+          data-bs-target="#devSuitesModal"
+        >
+          Conocer Suites
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- MODAL: APPS PREPAGO -->
+<div
+  class="modal fade dev-modal"
+  id="devAppsModal"
+  tabindex="-1"
+  aria-labelledby="devAppsModalTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="dev-modal-kicker">Apps Prepago</span>
+          <h2 class="modal-title" id="devAppsModalTitle">Conoce nuestras Apps</h2>
         </div>
 
-        <div class="suite-grid">
-          <article class="suite-card reveal">
-            <img src="assets/Logo_MBO_1.png" alt="MBO Mi Bitácora Operativa">
-            <div class="suite-content">
-              <h3>MBO</h3>
-              <p class="suite-subtitle">Mi Bitácora Operativa</p>
-              <p>App móvil y plataforma web para asistencia, actividades en campo, vehículos, combustible, vacaciones, viajes, evidencias y operación diaria.</p>
-              <ul>
-                <li>Registro con fecha, hora y geolocalización.</li>
-                <li>Registros vehiculares, carga de combustible, prestamos, verificaciones, cheklist, et..</li>
-                <li>Bitácoras operativas con evidencia fotográfica.</li>
-                <li>Reportes automáticos semanales, mensuales o trimestrales.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="suite-card reveal">
-            <img src="assets/Logo_EHSMART_1.png" alt="EHSMART EHS Monitoring and Reporting Tool">
-            <div class="suite-content">
-              <h3>EHSMART</h3>
-              <p class="suite-subtitle">EHS Monitoring and Reporting Tool</p>
-              <p>Suite para seguridad, salud y medio ambiente: hallazgos, incidentes, permisos, recorridos, evidencias y seguimiento normativo.</p>
-              <ul>
-                <li>Control de seguridad del personal en campo.</li>
-                <li>Permisos y reportes digitales con trazabilidad.</li>
-                <li>Paneles para seguimiento y cumplimiento.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="suite-card reveal">
-            <img src="assets/Logo_ROCS_1.png" alt="ROCS plataforma de control operativo">
-            <div class="suite-content">
-              <h3>ROCS</h3>
-              <p class="suite-subtitle">Registro Operativo y Control de Servicios</p>
-              <p>Plataforma para control de servicios, proyectos, contratistas, evidencias, avances, documentación y seguimiento de actividades.</p>
-              <ul>
-                <li>Consulta rápida de información por proyecto.</li>
-                <li>Administración de avances y evidencias.</li>
-                <li>Visualización interactiva de datos operativos.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
+        <button
+          type="button"
+          class="dev-close"
+          data-bs-dismiss="modal"
+          aria-label="Cerrar"
+        >
+          &times;
+        </button>
       </div>
-    </section>
 
+      <div class="modal-body">
+        <details class="dev-product" open>
+          <summary>CHAT STUDIO <span aria-hidden="true">⌄</span></summary>
+
+          <div class="dev-product-body">
+            <div class="dev-product-grid">
+              <div class="dev-product-copy">
+                <h3>CHAT STUDIO</h3>
+
+                <p>
+                  Organiza tus conversaciones y convierte la información
+                  que compartes en registros fáciles de consultar y descargar.
+                </p>
+
+                <ul>
+                  <li>Guarda tus conversaciones para retomarlas cuando lo necesites.</li>
+                  <li>Consulta la información de cada conversación en un solo lugar.</li>
+                  <li>Descarga tus datos en formato Excel.</li>
+                  <li>Administra tus conversaciones según las funciones de tu plan.</li>
+                </ul>
+
+                <a
+                  class="btn primary dev-product-link"
+                  href="https://script.google.com/macros/s/AKfycbyjAHEdsm5i_louUnFQaqEcW-TtEvcwVVTjNOKdjHgCX0G7pK3NPiNvmynP1JxiWFAl/exec"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ir a CHAT STUDIO
+                </a>
+              </div>
+
+              <div class="dev-product-visual">
+                <img
+                  src="assets/DAP CHAT STUDIO_3.png"
+                  alt="Identidad visual de DAP CHAT STUDIO"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL: SUITES Y PLATAFORMAS -->
+<div
+  class="modal fade dev-modal"
+  id="devSuitesModal"
+  tabindex="-1"
+  aria-labelledby="devSuitesModalTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span class="dev-modal-kicker">Suites y Plataformas</span>
+          <h2 class="modal-title" id="devSuitesModalTitle">
+            Soluciones para tu empresa
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="dev-close"
+          data-bs-dismiss="modal"
+          aria-label="Cerrar"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- SIGO -->
+        <details class="dev-product">
+          <summary>SIGO <span aria-hidden="true">⌄</span></summary>
+
+          <div class="dev-product-body">
+            <div class="dev-product-grid">
+              <div class="dev-product-copy">
+                <h3>SIGO | Sistema Integral de Gestión Operativa</h3>
+
+                <p>
+                  SIGO conecta el trabajo en campo con la gestión de la empresa.
+                  El personal registra información desde una app móvil, mientras
+                  que la plataforma permite consultarla, organizarla y darle
+                  seguimiento.
+                </p>
+
+                <ul>
+                  <li>
+                    <strong>App de campo:</strong> captura registros y evidencias
+                    desde celulares o tabletas.
+                  </li>
+                  <li>
+                    <strong>Plataforma de gestión:</strong> consulta la información
+                    registrada por el equipo.
+                  </li>
+                  <li>
+                    <strong>Operación conectada:</strong> reúne los datos de campo
+                    en un solo lugar para facilitar el seguimiento.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dev-product-visual">
+                <img
+                  src="assets/LOGO_DAP_SIGO_1.png"
+                  alt="Logotipo de SIGO"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div
+              id="devSigoCarousel"
+              class="carousel slide dev-carousel"
+              data-bs-interval="false"
+              aria-label="Imágenes de SIGO"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/DAP_SIGO_1.png" alt="Vista 1 de SIGO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_SIGO_2.png" alt="Vista 2 de SIGO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_SIGO_3.png" alt="Vista 3 de SIGO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_SIGO_4.png" alt="Vista 4 de SIGO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_SIGO_5.png" alt="Vista 5 de SIGO" loading="lazy" />
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#devSigoCarousel"
+                data-bs-slide="prev"
+                aria-label="Imagen anterior de SIGO"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#devSigoCarousel"
+                data-bs-slide="next"
+                aria-label="Imagen siguiente de SIGO"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </details>
+
+        <!-- ACCESO -->
+        <details class="dev-product">
+          <summary>ACCESO <span aria-hidden="true">⌄</span></summary>
+
+          <div class="dev-product-body">
+            <div class="dev-product-grid">
+              <div class="dev-product-copy">
+                <h3>ACCESO | Gestión de contratistas en obra</h3>
+
+                <p>
+                  ACCESO reúne en una sola plataforma los trámites, registros y
+                  reportes que necesitan las empresas para coordinar a sus
+                  contratistas y dar seguimiento a sus actividades en obra.
+                </p>
+
+                <ul>
+                  <li>Carga de permisos de trabajo y documentación del IMSS, incluido el SUA.</li>
+                  <li>Registro de trabajadores y generación de credenciales digitales.</li>
+                  <li>Solicitud de cursos y pases de visita para el ingreso a obra.</li>
+                  <li>Registro de horas hombre.</li>
+                  <li>Reporte de hallazgos, incidentes, accidentes y buenas prácticas.</li>
+                </ul>
+              </div>
+
+              <div class="dev-product-visual">
+                <img
+                  src="assets/LOGO_DAP_ACCESO_1.png"
+                  alt="Logotipo de ACCESO"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div
+              id="devAccesoCarousel"
+              class="carousel slide dev-carousel"
+              data-bs-interval="false"
+              aria-label="Imágenes de ACCESO"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/DAP_ACCESO_1.png" alt="Vista 1 de ACCESO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_ACCESO_2.png" alt="Vista 2 de ACCESO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_ACCESO_3.png" alt="Vista 3 de ACCESO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_ACCESO_4.png" alt="Vista 4 de ACCESO" loading="lazy" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/DAP_ACCESO_5.png" alt="Vista 5 de ACCESO" loading="lazy" />
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#devAccesoCarousel"
+                data-bs-slide="prev"
+                aria-label="Imagen anterior de ACCESO"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#devAccesoCarousel"
+                data-bs-slide="next"
+                aria-label="Imagen siguiente de ACCESO"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
     
@@ -426,6 +705,12 @@
 </p>
   </footer>
 
-  <script src="script.js"></script>
+ <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+  crossorigin="anonymous"
+></script>
+
+<script src="script.js"></script>
 </body>
 </html>
