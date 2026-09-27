@@ -1699,24 +1699,23 @@ body.modal-open {
   color: var(--muted);
 }
 
-#desarrollos .dev-card-button {
-  margin-top: auto;
-  cursor: pointer;
-}
-
+/* Imagen pequeña y centrada dentro de cada tarjeta */
 #desarrollos .dev-card-image {
   display: block;
-  width: 100%;
-  max-width: 220px;
-  height: 150px;
-  margin: 0 auto 24px;
+  flex: none;
+  width: min(100%, 160px);
+  height: 110px;
+  margin: 4px auto 22px;
   object-fit: contain;
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
+/* Botón centrado debajo de la imagen */
 #desarrollos .dev-card-button {
   align-self: center;
-  margin-top: auto;
+  width: fit-content;
+  margin: auto auto 0;
+  cursor: pointer;
 }
 
 @media (max-width: 760px) {
