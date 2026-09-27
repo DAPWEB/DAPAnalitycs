@@ -1649,5 +1649,5 @@ body.modal-open {
   width: 100%;
   height: clamp(300px, 37vw, 500px);
   object-fit: cover;
-  border-radius: 28px;
+  border-radius: 18px;
 }
