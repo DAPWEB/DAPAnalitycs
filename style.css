@@ -1627,3 +1627,13 @@ body.modal-open {
     height: 270px;
   }
 }
+
+#quienes .business-carousel-viewport {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+#quienes .business-carousel-slide img {
+  display: block;
+  border-radius: 28px;
+}
