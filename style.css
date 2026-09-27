@@ -1651,3 +1651,258 @@ body.modal-open {
   object-fit: cover;
   border-radius: 18px;
 }
+
+
+
+
+
+/* Tarjetas de Desarrollos */
+#desarrollos .dev-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+#desarrollos .dev-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 300px;
+  padding: clamp(28px, 4vw, 42px);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.03)),
+    rgba(5, 24, 39, .78);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+#desarrollos .dev-card-label,
+.dev-modal .dev-modal-kicker {
+  color: var(--green);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#desarrollos .dev-card h3 {
+  margin: 14px 0;
+  color: var(--text);
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+}
+
+#desarrollos .dev-card p {
+  max-width: 480px;
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+
+#desarrollos .dev-card-button {
+  margin-top: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  #desarrollos .dev-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Modales de productos */
+.dev-modal {
+  color: var(--text);
+}
+
+.dev-modal .modal-dialog {
+  max-width: 1120px;
+}
+
+.dev-modal .modal-content {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: #071b2a;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, .55);
+}
+
+.dev-modal .modal-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dev-modal .modal-title {
+  margin: 5px 0 0;
+  color: var(--text);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.dev-modal .modal-body {
+  padding: 24px 32px 32px;
+}
+
+.dev-modal .dev-close {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  margin-left: auto;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dev-modal .dev-product {
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 1px solid rgba(32,196,255,.25);
+  border-radius: 18px;
+  background: rgba(255,255,255,.035);
+}
+
+.dev-modal .dev-product summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.dev-modal .dev-product summary::-webkit-details-marker {
+  display: none;
+}
+
+.dev-modal .dev-product summary span {
+  color: var(--green);
+  font-size: 1.4rem;
+  transition: transform .2s ease;
+}
+
+.dev-modal .dev-product[open] summary span {
+  transform: rotate(180deg);
+}
+
+.dev-modal .dev-product summary:focus-visible,
+.dev-modal .dev-close:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: -3px;
+}
+
+.dev-modal .dev-product-body {
+  padding: 22px;
+  border-top: 1px solid rgba(32,196,255,.18);
+}
+
+.dev-modal .dev-product-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, .65fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.dev-modal .dev-product-copy h3 {
+  margin-bottom: 15px;
+  color: var(--text);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+.dev-modal .dev-product-copy p,
+.dev-modal .dev-product-copy li {
+  color: var(--muted);
+}
+
+.dev-modal .dev-product-copy ul {
+  margin: 18px 0 0;
+  padding-left: 22px;
+}
+
+.dev-modal .dev-product-copy li + li {
+  margin-top: 9px;
+}
+
+.dev-modal .dev-product-copy li::marker {
+  color: var(--green);
+}
+
+.dev-modal .dev-product-visual img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.dev-modal .dev-product-link {
+  display: inline-flex;
+  width: auto;
+  margin-top: 24px;
+}
+
+/* Carruseles SIGO y ACCESO */
+.dev-modal .dev-carousel {
+  overflow: hidden;
+  margin-top: 30px;
+  border: 1px solid rgba(32,196,255,.20);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, .20);
+}
+
+.dev-modal .dev-carousel .carousel-item img {
+  display: block;
+  width: 100%;
+  height: clamp(250px, 45vw, 500px);
+  object-fit: contain;
+}
+
+.dev-modal .dev-carousel .carousel-control-prev,
+.dev-modal .dev-carousel .carousel-control-next {
+  width: 52px;
+  opacity: 1;
+}
+
+.dev-modal .dev-carousel .carousel-control-prev-icon,
+.dev-modal .dev-carousel .carousel-control-next-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(4, 18, 28, .82);
+  background-size: 55%;
+}
+
+@media (max-width: 760px) {
+  .dev-modal .modal-header {
+    padding: 22px;
+  }
+
+  .dev-modal .modal-body {
+    padding: 18px;
+  }
+
+  .dev-modal .dev-product-body {
+    padding: 18px;
+  }
+
+  .dev-modal .dev-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dev-modal .dev-product-visual img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .dev-modal .dev-carousel .carousel-item img {
+    height: 280px;
+  }
+}
