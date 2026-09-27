@@ -1639,7 +1639,15 @@ body.modal-open {
   overflow: hidden;
 }
 
+#quienes .business-carousel-slide {
+  overflow: hidden;
+  border-radius: 28px;
+}
+
 #quienes .business-carousel-slide img {
   display: block;
+  width: 100%;
+  height: clamp(300px, 37vw, 500px);
+  object-fit: cover;
   border-radius: 28px;
 }
