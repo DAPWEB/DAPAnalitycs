@@ -1707,15 +1707,16 @@ body.modal-open {
 #desarrollos .dev-card-image {
   display: block;
   width: 100%;
-  max-width: 340px;
-  height: 210px;
-  margin: 0 auto 28px;
+  max-width: 220px;
+  height: 150px;
+  margin: 0 auto 24px;
   object-fit: contain;
-  border-radius: 20px;
+  border-radius: 16px;
 }
 
 #desarrollos .dev-card-button {
-  align-self: flex-start;
+  align-self: center;
+  margin-top: auto;
 }
 
 @media (max-width: 760px) {
