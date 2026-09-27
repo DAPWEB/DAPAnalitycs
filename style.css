@@ -1704,6 +1704,20 @@ body.modal-open {
   cursor: pointer;
 }
 
+#desarrollos .dev-card-image {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: 210px;
+  margin: 0 auto 28px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+#desarrollos .dev-card-button {
+  align-self: flex-start;
+}
+
 @media (max-width: 760px) {
   #desarrollos .dev-grid {
     grid-template-columns: 1fr;
@@ -1906,3 +1920,7 @@ body.modal-open {
     height: 280px;
   }
 }
+
+
+
+
