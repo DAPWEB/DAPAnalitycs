@@ -1936,5 +1936,50 @@ body.modal-open {
 }
 
 
+/* Títulos desplegables: logo pequeño y texto blanco */
+.dev-modal .dev-product summary .dev-summary-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 1rem;
+  transform: none;
+}
 
+.dev-modal .dev-product summary .dev-summary-label span {
+  color: #fff;
+  font-size: inherit;
+  transform: none;
+}
+
+/* Evita que el título gire al abrir la sección */
+.dev-modal .dev-product[open] summary .dev-summary-label,
+.dev-modal .dev-product[open] summary .dev-summary-label span {
+  transform: none;
+}
+
+/* Logos pequeños */
+.dev-modal .dev-product summary img.dev-summary-logo {
+  display: block;
+  flex: 0 0 32px;
+  width: 32px;
+  max-width: 32px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  object-fit: contain;
+  transform: none;
+}
+
+/* Solo gira la flecha */
+.dev-modal .dev-product summary > .dev-summary-arrow {
+  color: var(--green);
+  font-size: 1.4rem;
+  transform: none;
+  transition: transform .2s ease;
+}
+
+.dev-modal .dev-product[open] summary > .dev-summary-arrow {
+  transform: rotate(180deg);
+}
 
