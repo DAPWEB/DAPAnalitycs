@@ -1921,7 +1921,10 @@ body.modal-open {
   margin-top: 24px;
 }
 
+
 /* Carruseles SIGO y ACCESO */
+
+
 .dev-modal .dev-carousel {
   overflow: hidden;
   margin-top: 30px;
@@ -1977,6 +1980,18 @@ body.modal-open {
   .dev-modal .dev-carousel .carousel-item img {
     height: 280px;
   }
+}
+
+/* Título encima de cada imagen del carrusel */
+.dev-modal .dev-carousel .dev-carousel-title {
+  margin: 0;
+  padding: 16px 20px;
+  color: #fff;
+  background: #102638;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
 }
 
 
