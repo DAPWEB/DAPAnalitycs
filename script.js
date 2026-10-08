@@ -356,13 +356,13 @@ function agregarTitulosDesarrollos() {
   const carruseles = [
     {
       id: "devSigoCarousel",
-      primerTitulo: "APP para Móvil",
-      segundoTitulo: "Plataforma de Control"
+      primerTitulo: "APP para Móvil 📱",
+      segundoTitulo: "Plataforma de Control 💻"
     },
     {
       id: "devAccesoCarousel",
-      primerTitulo: "Contratistas / Proveedores",
-      segundoTitulo: "Plataforma de Control"
+      primerTitulo: "Contratistas / Proveedores 👷",
+      segundoTitulo: "Plataforma de Control 🧑‍💼"
     }
   ];
 
