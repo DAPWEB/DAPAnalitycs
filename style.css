@@ -1663,7 +1663,40 @@ body.modal-open {
   border-radius: 18px;
 }
 
+/* Más espacio horizontal para el carrusel */
+#quienes .quienes-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 50px);
+}
 
+#quienes .quienes-image {
+  width: 100%;
+  max-width: 640px;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+#quienes .business-carousel-viewport,
+#quienes .business-carousel-slide {
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+/* Imagen completa, sin deformación ni recorte */
+#quienes .business-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 28px;
+}
+
+@media (max-width: 900px) {
+  #quienes .quienes-layout {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
