@@ -347,3 +347,47 @@ function initBusinessCarousel() {
 }
 
 document.addEventListener("DOMContentLoaded", initBusinessCarousel);
+
+
+
+
+/* Títulos para las imágenes de SIGO y ACCESO */
+function agregarTitulosDesarrollos() {
+  const carruseles = [
+    {
+      id: "devSigoCarousel",
+      primerTitulo: "APP para Móvil",
+      segundoTitulo: "Plataforma de Control"
+    },
+    {
+      id: "devAccesoCarousel",
+      primerTitulo: "Contratistas / Proveedores",
+      segundoTitulo: "Plataforma de Control"
+    }
+  ];
+
+  carruseles.forEach(({ id, primerTitulo, segundoTitulo }) => {
+    const carrusel = document.getElementById(id);
+    if (!carrusel) return;
+
+    carrusel.querySelectorAll(".carousel-item").forEach((slide, indice) => {
+      let titulo = slide.querySelector(".dev-carousel-title");
+
+      if (!titulo) {
+        titulo = document.createElement("h4");
+        titulo.className = "dev-carousel-title";
+        slide.prepend(titulo);
+      }
+
+      titulo.textContent = indice < 5
+        ? primerTitulo
+        : segundoTitulo;
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", agregarTitulosDesarrollos);
+} else {
+  agregarTitulosDesarrollos();
+}
