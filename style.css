@@ -1570,9 +1570,16 @@ body.modal-open {
 
 
 /* Quiénes somos */
-#quienes {
-  min-height: auto;
+
+
+
+#quienes .quienes-image {
+  width: 100%;
+  max-width: 420px;
+  min-width: 0;
+  margin: 0 auto;
 }
+
 
 .quienes-layout {
   display: grid;
@@ -1596,9 +1603,7 @@ body.modal-open {
   line-height: 1.75;
 }
 
-.quienes-image {
-  min-width: 0;
-}
+
 
 .quienes-image .business-carousel-slide img {
   width: 100%;
@@ -1624,7 +1629,12 @@ body.modal-open {
   }
 
   .quienes-image .business-carousel-slide img {
-    height: 360px;
+     display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
   }
 }
 
@@ -1635,8 +1645,9 @@ body.modal-open {
 }
 
 #quienes .business-carousel-viewport {
-  border-radius: 28px;
+  width: 100%;
   overflow: hidden;
+  border-radius: 28px;
 }
 
 #quienes .business-carousel-slide {
