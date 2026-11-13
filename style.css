@@ -2150,7 +2150,7 @@ body.modal-open {
 }
 
 /* Adaptación móvil */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
 
   .nav-socios {
     width: 100%;
@@ -2188,4 +2188,16 @@ body.modal-open {
 
 }
 
+
+.nav-links .nav-socios-toggle {
+  color: #8EE6B5;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 600;
+}
+
+.nav-links .nav-socios-toggle:hover {
+  color: #4CD678;
+}
 
