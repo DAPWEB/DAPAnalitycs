@@ -2042,3 +2042,150 @@ body.modal-open {
   transform: rotate(180deg);
 }
 
+
+
+
+/* ==========================================
+   DAP | HEADER - MENÚ SOCIOS
+========================================== */
+
+.nav-socios {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Botón principal */
+.nav-socios-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: #8EE6B5;
+  font: inherit;
+  font-weight: 600;
+
+  padding: 10px 12px;
+  transition: color 0.25s ease;
+}
+
+.nav-socios-toggle:hover,
+.nav-socios-toggle:focus-visible {
+  color: #4CD678;
+}
+
+/* Flecha desplegable */
+.socios-arrow {
+  font-size: 17px;
+  transition: transform 0.25s ease;
+}
+
+.nav-socios:hover .socios-arrow,
+.nav-socios:focus-within .socios-arrow,
+.nav-socios.is-open .socios-arrow {
+  transform: rotate(180deg);
+}
+
+/* Contenedor desplegable */
+.nav-socios-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  min-width: 215px;
+  padding: 8px;
+
+  background: #102B40;
+  border: 1px solid rgba(142,230,181,0.25);
+  border-radius: 12px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  z-index: 9999;
+}
+
+/* Mostrar menú */
+.nav-socios:hover .nav-socios-dropdown,
+.nav-socios:focus-within .nav-socios-dropdown,
+.nav-socios.is-open .nav-socios-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Opciones */
+.nav-socios-dropdown a {
+  display: block;
+  padding: 12px 14px;
+
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+
+  border-radius: 8px;
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-socios-dropdown a:hover {
+  background: rgba(76,214,120,0.13);
+  color: #8EE6B5;
+}
+
+/* Adaptación móvil */
+@media (max-width: 768px) {
+
+  .nav-socios {
+    width: 100%;
+    display: block;
+  }
+
+  .nav-socios-toggle {
+    width: 100%;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .nav-socios-dropdown {
+    position: static;
+    display: none;
+
+    width: 100%;
+    min-width: 0;
+
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+
+    box-shadow: none;
+    margin-top: 4px;
+  }
+
+  .nav-socios:hover .nav-socios-dropdown {
+    display: none;
+  }
+
+  .nav-socios.is-open .nav-socios-dropdown {
+    display: block;
+  }
+
+}
+
+
