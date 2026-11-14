@@ -2149,8 +2149,71 @@ body.modal-open {
   color: #8EE6B5;
 }
 
-/* Adaptación móvil */
+
+/* ==========================================
+   DAP | MENÚ SOCIOS - RESPONSIVE MÓVIL
+========================================== */
+
 @media (max-width: 760px) {
+
+  .nav-links .nav-socios {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .nav-links .nav-socios-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    text-align: left;
+    color: #8EE6B5;
+    font-size: 0.92rem;
+  }
+
+  .nav-links .nav-socios-dropdown {
+    position: static;
+    display: none;
+    width: 100%;
+    min-width: 0;
+    margin-top: 4px;
+    padding: 6px;
+
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+
+    background: #102B40;
+    border-radius: 12px;
+  }
+
+  /* Solo abrir mediante clic */
+  .nav-links .nav-socios.is-open .nav-socios-dropdown,
+  .nav-links .nav-socios.is-open:hover .nav-socios-dropdown {
+    display: block;
+  }
+
+  /* Mantener oculto cuando no está abierto */
+  .nav-links .nav-socios:not(.is-open) .nav-socios-dropdown,
+  .nav-links .nav-socios:not(.is-open):hover .nav-socios-dropdown {
+    display: none;
+  }
+
+  .nav-links .nav-socios-dropdown a {
+    display: block;
+    width: 100%;
+    padding: 13px 16px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .nav-links .nav-socios.is-open .socios-arrow {
+    transform: rotate(180deg);
+  }
+}
 
   .nav-socios {
     width: 100%;
