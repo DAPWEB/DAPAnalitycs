@@ -2044,11 +2044,12 @@ body.modal-open {
 
 
 
-
 /* ==========================================
    DAP | HEADER - MENÚ SOCIOS
+   Compatible con PC, tablet y celular
 ========================================== */
 
+/* Contenedor principal */
 .nav-socios {
   position: relative;
   display: flex;
@@ -2059,6 +2060,7 @@ body.modal-open {
 .nav-socios-toggle {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
 
   background: transparent;
@@ -2066,7 +2068,9 @@ body.modal-open {
   cursor: pointer;
 
   color: #8EE6B5;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   font-weight: 600;
 
   padding: 10px 12px;
@@ -2080,12 +2084,12 @@ body.modal-open {
 
 /* Flecha desplegable */
 .socios-arrow {
+  display: inline-block;
   font-size: 17px;
   transition: transform 0.25s ease;
 }
 
-.nav-socios:hover .socios-arrow,
-.nav-socios:focus-within .socios-arrow,
+/* Flecha cuando el menú está abierto */
 .nav-socios.is-open .socios-arrow {
   transform: rotate(180deg);
 }
@@ -2107,6 +2111,7 @@ body.modal-open {
 
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transform: translateY(8px);
 
   transition:
@@ -2117,16 +2122,32 @@ body.modal-open {
   z-index: 9999;
 }
 
-/* Mostrar menú */
-.nav-socios:hover .nav-socios-dropdown,
-.nav-socios:focus-within .nav-socios-dropdown,
+/* Mostrar menú al dar clic */
 .nav-socios.is-open .nav-socios-dropdown {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
-/* Opciones */
+/* Mostrar mediante hover solo en dispositivos
+   que realmente tienen cursor */
+@media (hover: hover) and (pointer: fine) {
+
+  .nav-socios:hover .nav-socios-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-socios:hover .socios-arrow {
+    transform: rotate(180deg);
+  }
+
+}
+
+/* Opciones del menú */
 .nav-socios-dropdown a {
   display: block;
   padding: 12px 14px;
@@ -2144,9 +2165,24 @@ body.modal-open {
     color 0.2s ease;
 }
 
-.nav-socios-dropdown a:hover {
+.nav-socios-dropdown a:hover,
+.nav-socios-dropdown a:focus-visible {
   background: rgba(76,214,120,0.13);
   color: #8EE6B5;
+}
+
+/* Mantener colores originales del header */
+.nav-links .nav-socios-toggle {
+  color: #8EE6B5;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 600;
+}
+
+.nav-links .nav-socios-toggle:hover,
+.nav-links .nav-socios-toggle:focus-visible {
+  color: #4CD678;
 }
 
 
@@ -2156,111 +2192,95 @@ body.modal-open {
 
 @media (max-width: 760px) {
 
+  /* Contenedor */
   .nav-links .nav-socios {
+    position: relative;
     display: block;
     width: 100%;
     min-width: 0;
   }
 
+  /* Botón Socios */
   .nav-links .nav-socios-toggle {
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 14px;
+
+    width: 100%;
+    padding: 14px 16px;
+
     text-align: left;
     color: #8EE6B5;
     font-size: 0.92rem;
   }
 
+  /* Submenú integrado al menú móvil */
   .nav-links .nav-socios-dropdown {
     position: static;
+
     display: none;
     width: 100%;
     min-width: 0;
+    max-width: 100%;
+
     margin-top: 4px;
     padding: 6px;
 
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    background: #102B40;
+    border: 1px solid rgba(142,230,181,0.20);
+    border-radius: 12px;
+
     box-shadow: none;
 
-    background: #102B40;
-    border-radius: 12px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+
+    transition: none;
   }
 
-  /* Solo abrir mediante clic */
-  .nav-links .nav-socios.is-open .nav-socios-dropdown,
-  .nav-links .nav-socios.is-open:hover .nav-socios-dropdown {
-    display: block;
-  }
-
-  /* Mantener oculto cuando no está abierto */
+  /* Ocultar mientras no esté abierto,
+     incluso si el dispositivo simula hover */
   .nav-links .nav-socios:not(.is-open) .nav-socios-dropdown,
   .nav-links .nav-socios:not(.is-open):hover .nav-socios-dropdown {
     display: none;
   }
 
-  .nav-links .nav-socios-dropdown a {
+  /* Mostrar exclusivamente al tocar Socios */
+  .nav-links .nav-socios.is-open .nav-socios-dropdown,
+  .nav-links .nav-socios.is-open:hover .nav-socios-dropdown {
     display: block;
-    width: 100%;
-    padding: 13px 16px;
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-
-  .nav-links .nav-socios.is-open .socios-arrow {
-    transform: rotate(180deg);
-  }
-}
-
-  .nav-socios {
-    width: 100%;
-    display: block;
-  }
-
-  .nav-socios-toggle {
-    width: 100%;
-    justify-content: space-between;
-    text-align: left;
-  }
-
-  .nav-socios-dropdown {
-    position: static;
-    display: none;
-
-    width: 100%;
-    min-width: 0;
-
     opacity: 1;
     visibility: visible;
     transform: none;
-
-    box-shadow: none;
-    margin-top: 4px;
   }
 
-  .nav-socios:hover .nav-socios-dropdown {
-    display: none;
-  }
-
-  .nav-socios.is-open .nav-socios-dropdown {
+  /* Opciones del submenú */
+  .nav-links .nav-socios-dropdown a {
     display: block;
+    width: 100%;
+
+    padding: 13px 16px;
+
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    text-align: left;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    border-radius: 8px;
+  }
+
+  .nav-links .nav-socios-dropdown a:hover,
+  .nav-links .nav-socios-dropdown a:focus-visible {
+    background: rgba(76,214,120,0.13);
+    color: #8EE6B5;
+  }
+
+  /* Flecha desplegable */
+  .nav-links .nav-socios.is-open .socios-arrow {
+    transform: rotate(180deg);
   }
 
 }
-
-
-.nav-links .nav-socios-toggle {
-  color: #8EE6B5;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: 600;
-}
-
-.nav-links .nav-socios-toggle:hover {
-  color: #4CD678;
-}
-
