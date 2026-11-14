@@ -12,17 +12,99 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
+/* ==========================================
+   DAP | MENÚ PRINCIPAL Y SOCIOS
+   Compatible con PC, tablet y celular
+========================================== */
+
+const navSocios = document.querySelector(".nav-socios");
+const sociosToggle = document.querySelector(".nav-socios-toggle");
+
+function cerrarSocios() {
+  if (!navSocios || !sociosToggle) return;
+
+  navSocios.classList.remove("is-open");
+  sociosToggle.setAttribute("aria-expanded", "false");
+}
+
+function cerrarMenuPrincipal() {
+  navLinks?.classList.remove("open");
+
+  if (menuToggle) {
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+
+  cerrarSocios();
+}
+
+// Abrir y cerrar menú principal
 if (menuToggle && navLinks) {
+
+  menuToggle.setAttribute("aria-expanded", "false");
+
   menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
+
+    const abierto = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      String(abierto)
+    );
+
+    if (!abierto) {
+      cerrarSocios();
+    }
+
   });
 }
 
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks?.classList.remove("open");
+// Abrir y cerrar submenú Socios
+if (navSocios && sociosToggle) {
+
+  sociosToggle.addEventListener("click", (event) => {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    const abierto = navSocios.classList.toggle("is-open");
+
+    sociosToggle.setAttribute(
+      "aria-expanded",
+      String(abierto)
+    );
+
   });
+
+}
+
+// Cerrar menú cuando se selecciona una opción
+document.querySelectorAll(".nav-links a").forEach((link) => {
+
+  link.addEventListener("click", () => {
+    cerrarMenuPrincipal();
+  });
+
 });
+
+// Cerrar submenú al pulsar fuera de él
+document.addEventListener("click", (event) => {
+
+  if (navSocios && !navSocios.contains(event.target)) {
+    cerrarSocios();
+  }
+
+});
+
+// Cerrar con Escape
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "Escape") {
+    cerrarMenuPrincipal();
+  }
+
+});
+
 
 const observer = new IntersectionObserver(
   (entries) => {
